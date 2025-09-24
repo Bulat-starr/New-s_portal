@@ -14,7 +14,7 @@ header {
     position: sticky;
     top: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
 }
 
 ul {
@@ -55,7 +55,9 @@ li a {
 a:hover {
     background-color: beige;
 }
-
+img {
+    opacity: 100%;
+}
 li a.active {
     background-color: #04AA6D;
     color: white;
@@ -79,13 +81,15 @@ li a.active {
     justify-content: center;
     text-align: center;
     height: 100%;
+    color: #241a4e;
+    z-index: 0;
+}
+div.logo-picture{
+    z-index: 1;
 }
 
 /* Change color on hover */
-ul.topnav li a:hover {
-    background-color: #dddddd;
-    color: black;
-}
+
 
 /*div.flex-container {*/
 /*    display: flex;*/
