@@ -1,15 +1,24 @@
-
+* {
+    box-sizing: border-box;
+}
 header {
     background-color: #f1f1f1;
     text-align: center;
-    padding: 10px;
+    padding: 60px;
+    color: #241a4e;
+    font-size: 30px;
     /*margin-bottom: 10px;*/
 }
 
+#navbar {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+}
 
 ul {
-    top:0;
-    position: sticky;
+
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -58,11 +67,62 @@ li a.active {
     margin-top: 50px;
 }
 .logo-container{
-    width:80%;
+    background-image: url("./src/pravda-100-let-1200_778.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    opacity: 60%;
+    background-position: center;
     display: inline-block;
-    margin-left: 10%;
+    /*margin-left: 10%;*/
     background-color: cadetblue;
     justify-content: center;
     text-align: center;
     height: 100%;
+}
+
+/* Change color on hover */
+ul.topnav li a:hover {
+    background-color: #dddddd;
+    color: black;
+}
+
+/*div.flex-container {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*}*/
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Sidebar/left column */
+.side {
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* Main column */
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+div.logo-picture{
+    padding: 10px;
+    opacity: 100;
+    display: inline-block;
+    border-style: dot-dash;
+    border-color: #04AA6D;
+    /*border-radius: 50%;*/
 }
