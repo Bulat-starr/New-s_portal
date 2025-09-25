@@ -19,4 +19,4 @@ def index():
         Methods: GET only
         """
 
-    return render_template('main_page.html')
+    return render_template('index.html')
