@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
+a{
+    text-decoration: none;
+}
 .present{
     margin-top: 50px;
 }
@@ -10,7 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    background-blend-mode: color-burn;
+    /*background-blend-mode: color-burn;*/
     width:100%;
 
     background-position: center;
@@ -51,13 +53,23 @@ div.logo-picture {
     flex: 30%;
     background-color: #f1f1f1;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
-
+div.post{
+    padding: 10px; /* 40px - отступ сверху и снизу; auto - выравнивание по горизонтали */
+    /*padding-left: 10px;*/
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 /* Main column */
 .main {
     flex: 70%;
     background-color: white;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Fake image, just for this example */
