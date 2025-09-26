@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, jsonify, flash, redirect,
 
 bp = Blueprint('main', __name__)
 
+@bp.route('/home')
 @bp.route('/')
 def index():
     """
@@ -18,5 +19,16 @@ def index():
         Template: main_page.html
         Methods: GET only
         """
-
     return render_template('index.html')
+
+
+@bp.route('/news')
+def news():
+    return render_template('news.html')
+
+
+@bp.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
