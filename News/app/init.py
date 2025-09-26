@@ -1,5 +1,9 @@
+import sqlalchemy
 from flask import Flask, render_template
 from config import config
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 def createApp():
     """
@@ -19,9 +23,11 @@ def createApp():
         """
     app = Flask(__name__)
     app.config.from_object(config)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+
+    db.init_app(app)
+
     from routes import bp
     app.register_blueprint(bp)
 
     return app
-
-
