@@ -21,7 +21,6 @@ def index():
         """
     return render_template('index.html')
 
-
 @bp.route('/news')
 def news():
     return render_template('news.html')
