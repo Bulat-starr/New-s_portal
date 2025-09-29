@@ -2,10 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title52</title>
+    <link rel="stylesheet" href="../static/navbar_style.css">
+    <link rel="stylesheet" href="../static/style2.css">
+    <title>NEWS</title>
 
 </head>
 <body>
-    <a>sdsdasd</a>
+<header>
+    NEW-S Portal
+</header>
+
+<div id="navbar">
+    <ul>
+        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li><a href="{{ url_for('main.main_page') }}">News</a></li>
+        <li><a href="profile.html">Contact</a></li>
+        <li class="logout"><a href="#">log out</a></li>
+    </ul>
+</div>
+
+
+<div class="content-wrapper">
+    <h1>Заголовок страницы</h1>
+
+    <div id="scroller" class="post">
+        <template id="post_template">
+            <h2 id="title"></h2>
+            <span id="content"></span>
+        </template>
+    </div>
+
+    <div class="d-flex" id="sentinel">
+        <div class="spinner-border" role="status"></div>
+    </div>
+
+</div>
+
+<script src = "../static/script.js"></script>
+
 </body>
 </html>
