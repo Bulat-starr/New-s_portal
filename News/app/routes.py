@@ -29,31 +29,15 @@ for x in range(posts):
 def index():
     """
         Обработчик главной страницы приложения.
-
-        Returns:
-            Response: HTML страница, отрендеренная из шаблона main_page.html
-
-        Functionality:
-            - Отображает главную страницу новостного агрегатора
-            - В будущем здесь будет передаваться список новостей в шаблон
-            - Подготавливается для добавления пагинации и фильтров
-
-        Template: main_page.html
-        Methods: GET only
-        """
+    """
 
     return render_template('index.html')
 
 
 
 @bp.route('/contact')
-def profile():
-    return render_template('profile.html')
-
-@bp.route('/login')
-def login():
-    return render_template('login.html')
-
+def contact():
+    return render_template('contact.html')
 
 @bp.route('/news')
 def main_page():

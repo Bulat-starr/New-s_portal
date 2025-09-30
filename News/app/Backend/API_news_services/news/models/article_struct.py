@@ -3,6 +3,7 @@ class article:
     article_text: str
     article_url: str
     author: str
+    content: str
     def getTitle(self):
         return self.title
     def getText(self):
@@ -11,3 +12,5 @@ class article:
         return self.article_url
     def getAuthor(self):
         return self.author
+    def getContent(self):
+        return self.content
