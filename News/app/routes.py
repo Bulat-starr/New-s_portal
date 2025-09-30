@@ -47,8 +47,13 @@ def index():
 
 
 @bp.route('/contact')
-def contact():
-    return render_template('contact.html')
+def profile():
+    return render_template('profile.html')
+
+@bp.route('/login')
+def login():
+    return render_template('login.html')
+
 
 @bp.route('/news')
 def main_page():
