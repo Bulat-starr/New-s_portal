@@ -5,13 +5,11 @@
     <link rel="stylesheet" href="../static/navbar_style.css">
     <link rel="stylesheet" href="../static/style2.css">
     <title>NEWS</title>
-
 </head>
 <body>
 <header>
     NEW-S Portal
 </header>
-
 <div id="navbar">
     <ul>
         <li><a href="{{ url_for('main.index') }}">Home</a></li>
@@ -21,24 +19,25 @@
     </ul>
 </div>
 
-
 <div class="content-wrapper">
-    <h1>Заголовок страницы</h1>
+    <h1>Последние новости</h1>
 
-    <div id="scroller" class="post">
-        <template id="post_template">
-            <h2 id="title"></h2>
-            <span id="content"></span>
-        </template>
+<!--    контейнер для новостей-->
+    <div id="newsContainer">
     </div>
 
-    <div class="d-flex" id="sentinel">
+<!--    индикатор загрузки-->
+    <div class="loading-indicator" id="loadingIndicator">
         <div class="spinner-border" role="status"></div>
+        <span>Загрузка новостей...</span>
     </div>
 
+<!--    сообщение о конце списка-->
+    <div class="end-message" id="endMessage" style="display: none;">
+        Вы просмотрели все новости!
+    </div>
 </div>
 
-<script src = "../static/script.js"></script>
-
+<script src="../static/script.js"></script>
 </body>
 </html>

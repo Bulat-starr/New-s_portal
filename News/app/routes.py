@@ -56,19 +56,13 @@ def main_page():
 
 @bp.route('/news/load')
 def load():
+    counter = int(request.args.get("c", 0))
+    print(f"запрос новостей с counter: {counter}")
 
-    res = make_response(jsonify([]), 400)
+    if counter >= len(db):
+        return make_response(jsonify([]), 200)
 
-    if request.args:
-        counter = int(request.args.get("c"))
-        if counter == 0:
-            print(f"Returning posts 0 to {quantity}")
-            res = make_response(jsonify(db[0:quantity]), 200)
-        elif counter == posts:
-            print("No more posts")
-            res = make_response(jsonify([]), 200)
-        else:
-            print(f"Returning posts {counter} to {counter + quantity}")
-            res = make_response(jsonify(db[counter:counter + quantity]), 200)
-    return res
+    end_index = min(counter + quantity, len(db))
+    posts_chunk = db[counter:end_index]
+    return make_response(jsonify(posts_chunk), 200)
 

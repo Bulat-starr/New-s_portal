@@ -1,77 +1,18 @@
 * {
     box-sizing: border-box;
 }
-header {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 60px;
-    color: #241a4e;
-    font-size: 30px;
-    /*margin-bottom: 10px;*/
-}
-
-#navbar {
-    position: sticky;
-    top: 0;
-    overflow: hidden;
-    background-color: white;
-    color: cadetblue;
-    z-index: 10;
-}
-
-ul {
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    border: 1px solid #e7e7e7;
-    width: 100%;
-}
-.container-navbar{
-    display: inline-block;
-    width: 100%;
-    height: 10%;
-
-}
-
-
-li{
-    display: inline-block;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-li a {
-    display: block;
-    text-align: center;
+a{
     text-decoration: none;
-    padding: 14px 16px;
-    font-size: 25px;
-
-}
-a:hover {
-    background-color: beige;
-}
-
-li a.active {
-    background-color: #04AA6D;
-    color: white;
-}
-.logout{
-    float: right;
 }
 .present{
     margin-top: 50px;
 }
 .logo-container{
-    background-image: url("./src/pravda-100-let-1200_778.webp");
+    background-image: url("../static/src/pravda-100-let-1200_778.webp");
     background-repeat: no-repeat;
     background-size: cover;
 
-    background-blend-mode: color-burn;
+    /*background-blend-mode: color-burn;*/
     width:100%;
 
     background-position: center;
@@ -84,15 +25,15 @@ li a.active {
     color: #a32145;
     font-size: 50px;
 }
-div.logo-picture{
+div.logo-picture {
     margin: 40px;
     padding: 100px;
     border-spacing: 40px;
     backdrop-filter: blur(5px);
     border-radius: 1000px;
-    border-style: double;
+    border-style: dashed;
+    border-color: black;
 }
-
 /* Change color on hover */
 
 
@@ -112,13 +53,23 @@ div.logo-picture{
     flex: 30%;
     background-color: #f1f1f1;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
-
+div.post{
+    padding: 10px; /* 40px - отступ сверху и снизу; auto - выравнивание по горизонтали */
+    /*padding-left: 10px;*/
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 /* Main column */
 .main {
     flex: 70%;
     background-color: white;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Fake image, just for this example */
@@ -127,7 +78,7 @@ div.logo-picture{
     width: 100%;
     padding: 20px;
 }
-div.logo-picture{
+div.logo-picture {
     padding: 50px;
     opacity: 100;
     display: inline-block;
