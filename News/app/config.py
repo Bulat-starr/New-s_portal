@@ -1,16 +1,35 @@
+from News.app.app_logging.logger import logger, log_exceptions
+
+
 class config:
     """
     Конфигурационный класс для Flask приложения.
-
-    Содержит базовые настройки, необходимые для работы приложения.
-    В реальном проекте рекомендуется использовать environment variables
-    для хранения чувствительных данных (секретных ключей).
     """
 
     # Секретный ключ для подписи сессий и токенов
-    # ВНИМАНИЕ: В продакшене должен быть заменен на случайный сложный ключ
     SECRET_KEY = 'secret'
 
     # Режим отладки
     # В продакшене должен быть установлен в False
     DEBUG = True
+
+    @classmethod
+    @log_exceptions
+    def validate_config(cls):
+        """
+        Проверка конфигурации приложения
+        """
+        logger.info("Проверка конфигурации приложения ")
+
+        if not cls.SECRET_KEY or cls.SECRET_KEY == 'secret':
+            logger.warning("Используется стандартный SECRET_KEY")
+
+        if cls.DEBUG:
+            logger.info("Приложение запущено в режиме DEBUG")
+        else:
+            logger.info("Приложение запущено в продакшене")
+
+        logger.info("Конфигурация проверена успешно")
+
+
+config.validate_config()

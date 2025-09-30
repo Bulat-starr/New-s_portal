@@ -29,18 +29,7 @@ for x in range(posts):
 def index():
     """
         Обработчик главной страницы приложения.
-
-        Returns:
-            Response: HTML страница, отрендеренная из шаблона main_page.html
-
-        Functionality:
-            - Отображает главную страницу новостного агрегатора
-            - В будущем здесь будет передаваться список новостей в шаблон
-            - Подготавливается для добавления пагинации и фильтров
-
-        Template: main_page.html
-        Methods: GET only
-        """
+    """
 
     return render_template('index.html')
 
