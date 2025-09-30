@@ -8,13 +8,13 @@
      font-family: Arial, sans-serif;
  }
 
- header{
-     background-image:url("src/backimg.jpg");
-     background-size: cover;
-     padding: 200px;
-     background-position-y: 1771px;
-     color: red;
- }
+ /*header{*/
+ /*    background-image:url("src/backimg.jpg");*/
+ /*    background-size: cover;*/
+ /*    padding: 200px;*/
+ /*    background-position-y: 1771px;*/
+ /*    color: red;*/
+ /*}*/
 
 /* 2. Стили для белой подложки (content-wrapper) */
 .content-wrapper {
