@@ -23,7 +23,7 @@ def generateParams(params: filters):
         print(f"ERROR generating parameters: {e}")
         return None
 
-def parseNews(params: filters) -> list[article]:
+def parseNews(params: filters, number_of_news) -> list[article]:
     params_of_request = generateParams(params)
 
     response = requests.get(params.getUrl(), params_of_request)
@@ -31,12 +31,13 @@ def parseNews(params: filters) -> list[article]:
     if response.status_code == 200:
         data = response.json()
         print(f"Найдено статей: {data['totalResults']}")
-        for art in data['articles'][:5]:
+        for art in data['articles'][:number_of_news]:
             article_instance = article()
             article_instance.title = art['title']
             article_instance.article_text = art['description']
             article_instance.article_url = art['url']
             article_instance.author = art['author']
+            article_instance.content = art['content']
             articles.append(article_instance)
     else:
         print(f"Ошибка: {response.status_code} ")
