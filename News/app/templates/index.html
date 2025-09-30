@@ -13,8 +13,8 @@
 
 <div id="navbar">
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="main_page.html">News</a></li>
+        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li><a href="{{ url_for('main.main_page') }}">News</a></li>
         <li><a href="profile.html">Contact</a></li>
         <li class = "logout"><a href="#">log out</a></li>
     </ul>
