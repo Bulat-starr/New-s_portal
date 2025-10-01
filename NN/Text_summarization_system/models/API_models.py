@@ -1,4 +1,4 @@
-from NN.Text_summarization_service.Config_files.Prompts import get_prompt_for_summary
+from NN.Text_summarization_system.Config_files.Prompts import get_prompt_for_summary
 from langchain_core.prompts import PromptTemplate
 from google import genai
 
