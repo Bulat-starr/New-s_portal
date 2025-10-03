@@ -1,0 +1,16 @@
+class article:
+    title: str
+    article_text: str
+    article_url: str
+    author: str
+    content: str
+    def getTitle(self):
+        return self.title
+    def getText(self):
+        return self.article_text
+    def getUrl(self):
+        return self.article_url
+    def getAuthor(self):
+        return self.author
+    def getContent(self):
+        return self.content
