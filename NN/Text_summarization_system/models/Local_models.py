@@ -1,9 +1,17 @@
 from vllm import LLM, SamplingParams
-
+from NN.Recommendation_system.vector_database.weaviate_database import WeaviateDatabase
+from News.app.Backend.API_news_services.news.models.article_struct import article
 
 class ModelLocalInferenceVLLM:
-    def __init__(self, model_name='RefalMachine/RuadaptQwen2.5-1.5B-instruct',
-                 temperature=0.8, top_p=0.95, top_k=10, min_tokens=40, max_tokens=100, ignore_eos=True):
+    def __init__(self, weaviate_url, weaviate_api_key,
+                 model_name='RefalMachine/RuadaptQwen2.5-1.5B-instruct',
+                 temperature=0.8,
+                 top_p=0.95,
+                 top_k=10,
+                 min_tokens=40,
+                 max_tokens=100,
+                 ignore_eos=True,
+                 ):
 
         self._model_name = model_name
         self._sampling_params = SamplingParams(
@@ -15,22 +23,23 @@ class ModelLocalInferenceVLLM:
             min_tokens=min_tokens,
         )
 
-        self._llm = LLM(model_name=model_name)
+        self._llm = LLM(model=model_name)
+        self._weaviate_db = WeaviateDatabase(weaviate_url, weaviate_api_key)
 
 
     @staticmethod
-    def _convert_text_to_prompt(texts) -> list:
+    def _convert_text_to_prompt(articles: list[article]) -> list:
         """Converts the input list of texts into a list of model-appropriate prompts"""
-        prompts = [f"USER: \n{content}\nASSISTANT:" for content in texts]
+        prompts = [f"USER: \n{content.getContent()}\nASSISTANT:" for content in articles]
         return prompts
 
-    def inference(self, texts: list[str]) -> list[str]:
+    def inference(self, articles: list[article]) -> None:
         """Generate summary for input texts"""
-        converted_texts = self._convert_text_to_prompt(texts)
+        converted_texts = self._convert_text_to_prompt(articles)
         outputs = self._llm.generate(converted_texts, self._sampling_params)
 
-        output_array = []
+        summary = []
         for output in outputs:
-            output_array.append(output.outputs[0].text)
+            summary.append(output.outputs[0].text)
 
-        return output_array
+        self._weaviate_db.add_texts_to_weaviate_database(summary, articles)
