@@ -43,3 +43,7 @@ class ModelLocalInferenceVLLM:
             summary.append(output.outputs[0].text)
 
         self._weaviate_db.add_texts_to_weaviate_database(summary, articles)
+
+    def get_data(self):
+        """Get all texts with metadata"""
+        return self._weaviate_db.get_all_data_from_weaviate_db()

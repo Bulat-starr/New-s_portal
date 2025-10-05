@@ -224,4 +224,14 @@ class WeaviateDatabase:
 
         return output_articles
 
+    def get_all_data_from_weaviate_db(self):
+        client = weaviate.connect_to_weaviate_cloud(
+            cluster_url=self._weaviate_url_address,
+            auth_credentials=self._weaviate_api_key,
+        )
+        collection = client.collections.get(self._cluster_name)
+        all_data = []
+        for item in collection.iterator():
+            all_data.append(item.properties)
 
+        return all_data
