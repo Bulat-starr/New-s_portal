@@ -31,9 +31,11 @@ a{
     justify-content: center;
     text-align: center;
     height: 100%;
-    color: #a32145;
+    color: #318fbb;
     font-size: 50px;
+    box-shadow: #aaaaaa 10px 10px 10px;
 }
+
 div.logo-picture {
     margin: 40px;
     padding: 100px;
